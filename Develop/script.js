@@ -15,11 +15,11 @@ function pwdPrompt() {
   } else if(pwdLength > 128) {
       window.alert("Password is too long.");
   
-  } else(pwdLength > 8 && pwdLength < 128)
-    var lowerCasePrompt = window.prompt("Would you like lowercase letters? (yes or no)")
-    var uowerCasePrompt = window.prompt("Would you like uppercase letters? (yes or no)")
-    var numberPrompt = window.prompt("Would you like numbers? (yes or no)")
-    var specialPrompt = window.prompt("Would you like special symbols? (yes or no)")
+  } else{var lowerCasePrompt = window.confirm("Would you like lowercase letters? (yes or no)")
+  var upperCasePrompt = window.confirm("Would you like uppercase letters? (yes or no)")
+  var numberPrompt = window.confirm("Would you like numbers? (yes or no)")
+  var specialPrompt = window.confirm("Would you like special symbols? (yes or no)")}
+  
 }
 
 
