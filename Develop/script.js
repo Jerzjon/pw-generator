@@ -1,6 +1,6 @@
 // Assignment code here
 
-function getRandomPositonInArray(arrayLength)
+function getRandomPositonInArray(arrayLength) {
   
     var randomNumber=Math.random()
     var randomValue=randomNumber*arrayLength;
@@ -27,32 +27,43 @@ function generateRandomNumber(){
 function generateRandomPassword() {
     var includeSpecialCharacters=false;
     var includerUpperCaseLetters=true;
-    var includeLowerCaseLetters=true;
+    var includeLowerCaseLetters=false;
     var includeNumbers=true;
     var passwordLength=10;
-    var password=""
+    
+    var password="";
 
     if(includeSpecialCharacters) {
-      password+=generateRandomSpecialCharacter();
-
-      if(includeRandomUpperCaseLetter) {
-        password+=generateRandomUpperCaseLetter();
-
-        if(includeRandomUpperCaseLetter) {
-          password+=generateRandomLowerCaseLetter();
-
-          if(includRandomNumber) {
-            password+=generateRandomLowerCaseLetter();
-
+        password+=generateRandomSpecialCharacter();
     }
+
+    if(includerUpperCaseLetters) {
+        password+=generateRandomUpperCaseLetter();
+    }
+    
+    if(includeLowerCaseLetters) {
+        password+=generateRandomLowerCaseLetter();
+    }
+
+    if(includeNumbers) {
+        password+=generateRandomNumber();
+    }
+
+    for(var i=password.length;i<passwordLength;i++) {
+        var typeOfCharacterToGenerate="upper"
+
+        if(typeOfCharacterToGenerate==="upper") {
+            password+=generateRandomUpperCaseLetter();
+        }
+    
   }
-
-
+  return password;
 }
-
-
-
-
+console.log(generateRandomPassword())
+console.log(generateRandomPassword())
+console.log(generateRandomPassword())
+console.log(generateRandomPassword())
+console.log(generateRandomPassword())
 
 
 
