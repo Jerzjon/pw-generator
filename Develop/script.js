@@ -1,26 +1,58 @@
 // Assignment code here
 
-function pwdPrompt() {
-  var pwdLength=window.prompt("Please choose a password length 8-128 characters.")
-  var lowerCase = ["a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  var upperCase = ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-  var numbers= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  var special= ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
-
-
-  if(pwdLength < 8) {
-    window.alert("Password is too short.");
-
-    
-  } else if(pwdLength > 128) {
-      window.alert("Password is too long.");
+function getRandomPositonInArray(arrayLength)
   
-  } else{var lowerCasePrompt = window.confirm("Would you like lowercase letters? (yes or no)")
-  var upperCasePrompt = window.confirm("Would you like uppercase letters? (yes or no)")
-  var numberPrompt = window.confirm("Would you like numbers? (yes or no)")
-  var specialPrompt = window.confirm("Would you like special symbols? (yes or no)")}
+    var randomNumber=Math.random()
+    var randomValue=randomNumber*arrayLength;
+    return Math.floor(randomValue);
+
+}
+
+function generateRandomUpperCaseLetter() {
+    
+    var upperCaseLetters=["A","B","C","D"];
+    var randomPosition=getRandomPositonInArray(upperCaseLetters.length);
+    return upperCaseLetters[randomPosition];
   
 }
+  
+function generateRandomNumber(){
+    
+    var numbers=[0, 1, 2, 3, 4, 5,];
+    var randomPosition=getRandomPositonInArray(numbers.length);
+    return numbers[randomPosition];
+
+}
+
+function generateRandomPassword() {
+    var includeSpecialCharacters=false;
+    var includerUpperCaseLetters=true;
+    var includeLowerCaseLetters=true;
+    var includeNumbers=true;
+    var passwordLength=10;
+    var password=""
+
+    if(includeSpecialCharacters) {
+      password+=generateRandomSpecialCharacter();
+
+      if(includeRandomUpperCaseLetter) {
+        password+=generateRandomUpperCaseLetter();
+
+        if(includeRandomUpperCaseLetter) {
+          password+=generateRandomLowerCaseLetter();
+
+          if(includRandomNumber) {
+            password+=generateRandomLowerCaseLetter();
+
+    }
+  }
+
+
+}
+
+
+
+
 
 
 
